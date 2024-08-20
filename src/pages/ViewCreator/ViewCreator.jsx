@@ -32,21 +32,41 @@ const ViewCreator = () => {
                     <h2 className="creator-name">{creator[0].name}</h2>
                     <p className="description-box">{creator[0].description}</p>
                     <ul>
-                        <li>
-                            <a href={creator[0].ytURL} className="fa fa-youtube-play">
-                                <span> {creator[0].name}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href={creator[0].twitterURL} className="fa fa-twitter">
-                                <span> {creator[0].name}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href={creator[0].igURL} className="fa fa-instagram">
-                                <span> {creator[0].name}</span>
-                            </a>
-                        </li>
+                        {
+                            creator[0].ytURL ? (
+                                <li>
+                                    <a href={creator[0].ytURL} className="fa fa-youtube-play">
+                                        <span> {creator[0].name}</span>
+                                    </a>
+                                </li>
+                            ) : (
+                                <div></div>
+                            )
+                        }
+                        
+                        {
+                            creator[0].twitterURL ? (
+                                <li>
+                                    <a href={creator[0].twitterURL} className="fa fa-twitter">
+                                        <span> {creator[0].name}</span>
+                                    </a>
+                                </li>
+                            ) : (
+                                <div></div>
+                            )
+                        }
+
+                        {
+                            creator[0].igURL ? (
+                                <li>
+                                    <a href={creator[0].igURL} className="fa fa-instagram">
+                                        <span> {creator[0].name}</span>
+                                    </a>
+                                </li>
+                            ) : (
+                                <div></div>
+                            )
+                        }
                     </ul>      
                 </div>
             </div>
