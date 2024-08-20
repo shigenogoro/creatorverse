@@ -1,4 +1,4 @@
-import CardDeck from './components/CardDeck/CardDeck';
+import ShowCreators from './pages/ShowCreators/ShowCreators'
 import './App.css'
 
 function App() {
@@ -18,9 +18,9 @@ function App() {
             </nav>
           </div>
         </header>
-        
+
         <main>
-            <CardDeck />
+            <ShowCreators />
         </main>
       </div>
   )

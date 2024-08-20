@@ -1,12 +1,7 @@
-.main-title {
-    text-align: center;
-    font-size: 3rem;
-}
-
 .card-deck {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Adds spacing between the cards */
+    gap: 1rem; /* Adds spacing between the cards */
 }
