@@ -1,15 +1,14 @@
-.normal {
+button {
     width: 300px;
-    background-color: #3c668c;
     border: none;
-    color: white;
     border-radius: 30px;
+    color: white;
+}
+
+.normal {
+    background-color: #3c668c;
 }
 
 .danger {
-    width: 300px;
-    background-color: #3c668c;
-    border: none;
-    color: red;
-    border-radius: 30px;
+    background-color: red;
 }
