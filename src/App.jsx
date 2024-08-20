@@ -1,4 +1,4 @@
-import CardDeck from './components/CardDeck';
+import CardDeck from './components/CardDeck/CardDeck';
 import './App.css'
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
                 </button>
             </nav>
           </div>
-          
         </header>
+        
         <main>
             <CardDeck />
         </main>
