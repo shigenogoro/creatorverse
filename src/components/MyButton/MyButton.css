@@ -1,0 +1,15 @@
+.normal {
+    width: 300px;
+    background-color: #3c668c;
+    border: none;
+    color: white;
+    border-radius: 30px;
+}
+
+.danger {
+    width: 300px;
+    background-color: #3c668c;
+    border: none;
+    color: red;
+    border-radius: 30px;
+}

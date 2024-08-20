@@ -46,11 +46,3 @@ nav {
     justify-content: space-evenly;
     text-align: center;
 }
-
-button {
-    width: 300px;
-    background-color: #3c668c;
-    border: none;
-    color: white;
-    border-radius: 30px;
-}

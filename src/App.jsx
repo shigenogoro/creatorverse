@@ -1,6 +1,7 @@
 import { supabase } from './client';
 import { useEffect, useState } from 'react';
 import ShowCreators from './pages/ShowCreators/ShowCreators'
+import MyButton from './components/MyButton/MyButton';
 import './App.css'
 
 function App() {
@@ -24,12 +25,8 @@ function App() {
             <h1>Creatorverse</h1>
             <div className="nav-container">
               <nav>
-                  <button>
-                      <h2>View All Creators</h2>
-                  </button>
-                  <button>
-                      <h2>Add a Creator</h2>
-                  </button>
+                  <MyButton title="View All Creators" type="normal" />
+                  <MyButton title="Add a Creator" type="normal" />
               </nav>
             </div>
           </header>
