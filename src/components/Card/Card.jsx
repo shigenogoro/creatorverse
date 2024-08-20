@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import './Card.css'
 
 const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {

@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
 import Card from "../Card/Card";
 import './CardDeck.css'
 
-// eslint-disable-next-line react/prop-types
 const CardDeck = ( {creators} ) => {
 
     return (
