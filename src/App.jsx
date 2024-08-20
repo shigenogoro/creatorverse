@@ -1,4 +1,3 @@
-import backgroundImgSrc from './assets/static/creatorverse.jpg';
 import CardDeck from './components/CardDeck';
 import './App.css'
 
@@ -8,10 +7,17 @@ function App() {
       <div>
         <header>
           <h1>Creatorverse</h1>
-          <nav>
-            <button>View All Creators</button>
-            <button>Add new Creator</button>
-          </nav>
+          <div className="nav-container">
+            <nav>
+                <button>
+                    <h2>View All Creators</h2>
+                </button>
+                <button>
+                    <h2>Add a Creator</h2>
+                </button>
+            </nav>
+          </div>
+          
         </header>
         <main>
             <CardDeck />
