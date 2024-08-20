@@ -1,14 +1,29 @@
+/* eslint-disable react/prop-types */
 import Card from "../Card/Card";
 import './CardDeck.css'
 
-const CardDeck = () => {
+// eslint-disable-next-line react/prop-types
+const CardDeck = ( {creators} ) => {
+
     return (
         <div>
             <div className="card-deck">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+            {
+                creators.map((creator, i) => {
+                    return (
+                        <Card 
+                            key={i}
+                            id={creators[i].id}
+                            name={creators[i].name}
+                            ytURL={creators[i].ytURL}
+                            twitterURL={creators[i].twitterURL}
+                            igURL={creators[i].igURL}
+                            intro={creators[i].description}
+                            imgURL={creators[i].imgURL}
+                        />
+                    )
+                })
+            }
             </div>
         </div>
         

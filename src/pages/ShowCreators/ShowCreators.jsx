@@ -1,11 +1,11 @@
 import CardDeck from "../../components/CardDeck/CardDeck";
 import './ShowCreators.css'
 
-const ShowCreators = () => {
+const ShowCreators = ( {creators} ) => {
     return (
         <div>
             <h2 className="main-title">Creators List</h2>
-            <CardDeck />
+            <CardDeck creators={creators} />
         </div>
     )
 }
