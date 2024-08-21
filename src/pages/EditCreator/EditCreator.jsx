@@ -39,7 +39,7 @@ const EditCreator = () => {
         setRedirect(true);
     }
 
-    // Callback Method: Get data from Child to Parent
+    // Callback Method: Get Data from Child to Parent
     const handleValuesChange = (field, value) => {
         setValues(prevValues => {
             const updatedValues = [...prevValues]; 
@@ -59,7 +59,7 @@ const EditCreator = () => {
             
             <InfoForm values={values[0]} onValuesChange={handleValuesChange}  />
 
-            <div className="btn-group">
+            <div>
                 <MyButton title="Submit" type="normal" onClick={onButtonSubmit} />
                 <MyButton title="Delete" type="danger" onClick={onButtonDelete} />
             </div>

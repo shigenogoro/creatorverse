@@ -21,11 +21,11 @@ function App() {
 
     // Scroll to main div
     const scrollToMain = () => {
-      const mainDiv = document.querySelector('#main-page');
-      if (mainDiv) {
-          mainDiv.scrollIntoView({ behavior: 'smooth' });
-      }
-  }
+        const mainDiv = document.querySelector('#main-page');
+        if (mainDiv) {
+            mainDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
     return (
         <div>

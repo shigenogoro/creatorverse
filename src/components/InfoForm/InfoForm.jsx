@@ -20,6 +20,7 @@ const InfoForm = ({values, onValuesChange}) => {
                             name="name"  
                             id="name" 
                             value={values.name || ''}
+                            required
                         />
                     </div>
 
