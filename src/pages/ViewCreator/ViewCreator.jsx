@@ -37,13 +37,13 @@ const ViewCreator = () => {
 
     if(redirectEdit) {
         return (
-            <Navigate to={`/edit/${creatorId.id}`} />
+            <Navigate to={'/'} state={{page: 'edit', creatorId: creatorId.id}} />
         )
     }
 
     if(redirectHome) {
         return (
-            <Navigate to={'/'} />
+            <Navigate to={'/'} state={{page: 'show'}} />
         )
     }
 

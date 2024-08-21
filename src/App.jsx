@@ -1,5 +1,6 @@
 import { supabase } from './client';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ShowCreators from './pages/ShowCreators/ShowCreators';
 import AddCreator from './pages/AddCreator/AddCreator';
 import EditCreator from './pages/EditCreator/EditCreator';
@@ -12,11 +13,20 @@ function App() {
     const [page, setPage] = useState('show');
     // Store selected creator's ID
     const [selectedCreatorId, setSelectedCreatorId] = useState(null);  
+    // Get the state from locataion object
+    const location = useLocation();
     
     // Mounting as Page Loaded
     useEffect(() => {
+        if(location.state && location.state.page) {
+            setPage(location.state.page);
+            if(location.state.creatorId) {
+                setSelectedCreatorId(location.state.creatorId);
+            }
+            scrollToMain();
+        }
         getCreators();
-    }, []);
+    }, [location.state]);
 
     // Functions
     const getCreators = async () => {
@@ -37,13 +47,13 @@ function App() {
       }
   }
 
-  // Scroll to Main-Div
-  const scrollToMain = () => {
-      const mainDiv = document.querySelector('#main-page');
-      if (mainDiv) {
-          mainDiv.scrollIntoView({ behavior: 'smooth' });
-      }
-  }
+    // Scroll to Main-Div
+    const scrollToMain = () => {
+        const mainDiv = document.querySelector('#main-page');
+        if (mainDiv) {
+            mainDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
     return (
         <div>
