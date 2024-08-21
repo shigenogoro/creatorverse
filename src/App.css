@@ -45,6 +45,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .page-container {
@@ -59,6 +60,7 @@ nav {
     width: 60%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .main-title {

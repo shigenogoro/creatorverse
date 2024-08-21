@@ -8,8 +8,10 @@ button {
 
 .normal {
     background-color: #3c668c;
+    margin: 1rem;
 }
 
 .danger {
     background-color: red;
+    margin: 1rem;
 }
