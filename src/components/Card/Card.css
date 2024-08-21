@@ -76,3 +76,7 @@ h3 {
 .card-fa:hover {
     opacity: 0.7;   
 }
+
+.card-btn {
+    background: none;
+}

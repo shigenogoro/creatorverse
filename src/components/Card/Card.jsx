@@ -1,6 +1,6 @@
 import './Card.css'
 
-const Card = ({id, name, ytURL, twitterURL, igURL, intro, imgURL}) => {
+const Card = ({id, name, ytURL, twitterURL, igURL, intro, imgURL, onEdit}) => {
     return (
         <div className="card">
             <div className="card-bg" style={{backgroundImage: `url(${imgURL})`}}></div>
@@ -37,7 +37,7 @@ const Card = ({id, name, ytURL, twitterURL, igURL, intro, imgURL}) => {
                         </div>
                         <div className="card-info-btn-group">
                             <a href={`/view/${id}`} className="fa fa-info-circle card-fa"></a>
-                            <a href={`/edit/${id}`} className="fa fa-edit card-fa"></a>
+                            <button onClick={() => onEdit(id)} className="fa fa-edit card-fa card-btn"></button>
                         </div>
                     </div>
 

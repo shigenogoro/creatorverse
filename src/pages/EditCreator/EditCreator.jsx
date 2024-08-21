@@ -1,15 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import MyButton from "../../components/MyButton/MyButton";
 import InfoForm from "../../components/InfoForm/InfoForm";
 import './EditCreator.css'
 import { supabase } from "../../client";
 
-const EditCreator = () => {
-    // get user
-    const creatorId = useParams();
-
+const EditCreator = ({ creatorId }) => {
     // State Management
     const [values, setValues] = useState([{}]);
     const [redirect, setRedirect] = useState(false);
@@ -21,7 +18,7 @@ const EditCreator = () => {
 
     // Functions
     const getCreator = async () => {
-        const { data } = await supabase.from("creators").select().eq('id', creatorId.id);
+        const { data } = await supabase.from("creators").select().eq('id', creatorId);
         setValues(data);
     }
 

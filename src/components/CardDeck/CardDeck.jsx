@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 import './CardDeck.css'
 
-const CardDeck = ( {creators} ) => {
+const CardDeck = ( {creators, onEdit} ) => {
 
     return (
         <div>
@@ -18,6 +18,7 @@ const CardDeck = ( {creators} ) => {
                             igURL={creators[i].igURL}
                             intro={creators[i].description}
                             imgURL={creators[i].imgURL}
+                            onEdit={onEdit}
                         />
                     )
                 })
