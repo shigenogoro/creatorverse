@@ -47,9 +47,23 @@ nav {
     text-align: center;
 }
 
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .submit-btn-container {
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 60%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: "Sono", monospace;
 }

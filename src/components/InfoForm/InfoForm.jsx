@@ -11,7 +11,7 @@ const InfoForm = ({values, onValuesChange}) => {
             <div className="info-container">
                 <form>
                     <legend>Personal Information</legend>
-                    <div>
+                    <div className="form-field">
                         <label htmlFor="name">Name</label>
                         <br />
                         <input 
@@ -24,7 +24,7 @@ const InfoForm = ({values, onValuesChange}) => {
                         />
                     </div>
 
-                    <div>
+                    <div className="form-field">
                         <label htmlFor="imgURL">Image</label>
                         <br />
                         <input 
@@ -36,7 +36,7 @@ const InfoForm = ({values, onValuesChange}) => {
                         />
                     </div>
 
-                    <div>
+                    <div className="form-field">
                         <label htmlFor="description">Description</label>
                         <br />
                         <input 
@@ -52,7 +52,7 @@ const InfoForm = ({values, onValuesChange}) => {
             <div className="social-container">
                     <form>
                         <legend>Social Media Link</legend>
-                        <div>
+                        <div className="form-field">
                             <label htmlFor="ytURL">
                                 <span><i className="fa fa-youtube-play"></i> YouTube</span>
                             </label>
@@ -66,7 +66,7 @@ const InfoForm = ({values, onValuesChange}) => {
                             />
                         </div>
 
-                        <div>
+                        <div className="form-field">
                             <label htmlFor="twitterURL">
                                 <span><i className="fa fa-twitter"></i>Twitter</span>
                             </label>
@@ -80,7 +80,7 @@ const InfoForm = ({values, onValuesChange}) => {
                             />
                         </div>
 
-                        <div>
+                        <div className="form-field">
                             <label htmlFor="igURL">
                                 <span><i className="fa fa-instagram"></i>Instagram</span>
                             </label>

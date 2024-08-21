@@ -47,7 +47,7 @@ const EditCreator = ({ creatorId, onPageChange }) => {
     }
 
     return (
-        <div>
+        <div className="page-container">
             <h2 className="main-title">Edit Creator</h2>
             <InfoForm values={values[0]} onValuesChange={handleValuesChange}  />
 
