@@ -30,7 +30,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] Added RWD submit button for each pages.
+- [x] Added RWD submit button for each pages.
 
 ## Video Walkthrough
 
