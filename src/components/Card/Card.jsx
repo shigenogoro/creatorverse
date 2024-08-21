@@ -7,9 +7,9 @@ const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {
 
             <div className="card-content">
                 <h3>{name}</h3>
-                <div className="info-group">
-                    <div className="btn-group">
-                        <div className="social-btn-group">
+                <div className="card-info-group">
+                    <div className="card-btn-group">
+                        <div className="card-social-btn-group">
                             {
                                 ytURL ? (
                                     <a href={ytURL} className="fa fa-youtube-play"></a>
