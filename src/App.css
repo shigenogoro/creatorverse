@@ -46,3 +46,10 @@ nav {
     justify-content: space-evenly;
     text-align: center;
 }
+
+.submit-btn-container {
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}

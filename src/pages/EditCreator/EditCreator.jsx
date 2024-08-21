@@ -47,11 +47,11 @@ const EditCreator = ({ creatorId, onPageChange }) => {
     }
 
     return (
-        <div className="edit-container">
+        <div>
             <h2 className="main-title">Edit Creator</h2>
             <InfoForm values={values[0]} onValuesChange={handleValuesChange}  />
 
-            <div>
+            <div className="submit-btn-container">
                 <MyButton title="Submit" type="normal" onClick={onButtonSubmit} />
                 <MyButton title="Delete" type="danger" onClick={onButtonDelete} />
             </div>

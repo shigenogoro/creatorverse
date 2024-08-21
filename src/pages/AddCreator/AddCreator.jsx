@@ -28,11 +28,11 @@ const AddCreator = ({onPageChange}) => {
     }
 
     return (
-        <div className="add-container">
+        <div>
             <h2 className="main-title">Add Creator</h2>
             <InfoForm values={values[0]} onValuesChange={handleValuesChange} />
 
-            <div>
+            <div className="submit-btn-container">
                 <MyButton title="Submit" type="normal" onClick={onButtonSubmit} />
             </div>
         </div>
