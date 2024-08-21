@@ -19,19 +19,27 @@ function App() {
         setCreators(data);
     }
 
+    // Scroll to main div
+    const scrollToMain = () => {
+      const mainDiv = document.querySelector('#main-page');
+      if (mainDiv) {
+          mainDiv.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+
     return (
         <div>
           <header>
             <h1>Creatorverse</h1>
             <div className="nav-container">
               <nav>
-                  <MyButton title="View All Creators" type="normal" />
+                  <MyButton title="View All Creators" type="normal" onClick={scrollToMain} />
                   <MyButton title="Add a Creator" type="normal" />
               </nav>
             </div>
           </header>
 
-          <main>
+          <main id='main-page'>
               <ShowCreators creators={creators} />
           </main>
         </div>
