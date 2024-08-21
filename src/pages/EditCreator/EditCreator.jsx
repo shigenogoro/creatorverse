@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MyButton from "../../components/MyButton/MyButton";
@@ -30,6 +31,18 @@ const EditCreator = () => {
         });
     }
 
+    const onButtonSubmit = async () => {
+        const { error } = await supabase.from('creators').update(values[0]).eq('id', creatorId.id)
+        if(error) {
+            console.log(error)
+        }
+    }
+
+    const onButtonDelete = async () => {
+        const res = await supabase.from('creators').delete().eq('id', creatorId.id)
+        console.log(res);
+    }
+
     return (
         <div className="edit-container">
             <h2 className="title">Personal Info</h2>
@@ -43,7 +56,7 @@ const EditCreator = () => {
                             type="text" 
                             name="name"  
                             id="name" 
-                            value={values[0].name}
+                            value={values[0].name ? values[0].name : ''}
                         />
                     </div>
 
@@ -55,7 +68,7 @@ const EditCreator = () => {
                             type="text" 
                             name="imgURL"  
                             id="imgURL" 
-                            value={values[0].imgURL}
+                            value={values[0].imgURL ? values[0].imgURL : ''}
                         />
                     </div>
 
@@ -67,7 +80,7 @@ const EditCreator = () => {
                             type="textarea" 
                             name="description"  
                             id="description" 
-                            value={values[0].description}
+                            value={values[0].description ? values[0].description : ''}
                         />
                     </div>
                 </form>
@@ -86,7 +99,7 @@ const EditCreator = () => {
                             type="text" 
                             name="ytURL"  
                             id="ytURL" 
-                            value={values[0].ytURL}
+                            value={values[0].ytURL ? values[0].ytURL : ''}
                         />
                     </div>
 
@@ -100,7 +113,7 @@ const EditCreator = () => {
                             type="text" 
                             name="twitterURL"  
                             id="twitterURL" 
-                            value={values[0].twitterURL}
+                            value={values[0].twitterURL ? values[0].twitterURL : ''}
                         />
                     </div>
 
@@ -114,15 +127,15 @@ const EditCreator = () => {
                             type="text" 
                             name="igURL"  
                             id="igURL" 
-                            value={values[0].igURL}
+                            value={values[0].igURL ? values[0].igURL : ''}
                         />
                     </div>
                 </form>
             </div>
 
             <div className="btn-group">
-                <MyButton title="Submit" type="normal" />
-                <MyButton title="Delete" type="danger" />
+                <MyButton title="Submit" type="normal" onClick={onButtonSubmit} />
+                <MyButton title="Delete" type="danger" onClick={onButtonDelete} />
             </div>
         </div>
     )
