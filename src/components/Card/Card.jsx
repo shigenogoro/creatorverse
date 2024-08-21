@@ -10,15 +10,37 @@ const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {
                 <div className="info-group">
                     <div className="btn-group">
                         <div className="social-btn-group">
-                            <a href={ytURL} className="fa fa-youtube-play"></a>
-                            <a href={twitterURL} className="fa fa-twitter"></a>
-                            <a href={igURL} className="fa fa-instagram"></a>
+                            {
+                                ytURL ? (
+                                    <a href={ytURL} className="fa fa-youtube-play"></a>
+                                ) : (
+                                    <div></div>
+                                )
+                            }
+
+                            {
+                                twitterURL ? (
+                                    <a href={twitterURL} className="fa fa-twitter"></a>
+                                ) : (
+                                    <div></div>
+                                )
+                            }
+
+                            {
+                                igURL ? (
+                                    <a href={igURL} className="fa fa-instagram"></a>
+                                ) : (
+                                    <div></div>
+                                )
+                            }              
+
                         </div>
-                        <div className="info-btn-group">
+                        <div className="card-info-btn-group">
                             <a href="#" className="fa fa-info-circle"></a>
                             <a href="#" className="fa fa-edit"></a>
                         </div>
                     </div>
+
                     <p className="description-box">
                         {intro}
                     </p>
