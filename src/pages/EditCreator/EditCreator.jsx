@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import MyButton from "../../components/MyButton/MyButton";
 import './EditCreator.css'
 import { supabase } from "../../client";
@@ -11,6 +11,7 @@ const EditCreator = () => {
 
     // State Management
     const [values, setValues] = useState([{}]);
+    const [redirect, setRedirect] = useState(false);
 
     // Mounting as Page Loaded
     useEffect(() => {
@@ -36,11 +37,19 @@ const EditCreator = () => {
         if(error) {
             console.log(error)
         }
+        setRedirect(true)
     }
 
     const onButtonDelete = async () => {
         const res = await supabase.from('creators').delete().eq('id', creatorId.id)
         console.log(res);
+        setRedirect(true);
+    }
+
+    if(redirect) {
+        return (
+            <Navigate to={'/'} />
+        )
     }
 
     return (
