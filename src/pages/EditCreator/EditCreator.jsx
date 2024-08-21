@@ -1,15 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import MyButton from "../../components/MyButton/MyButton";
 import InfoForm from "../../components/InfoForm/InfoForm";
 import './EditCreator.css'
 import { supabase } from "../../client";
 
-const EditCreator = ({ creatorId }) => {
+const EditCreator = ({ creatorId, onPageChange }) => {
     // State Management
     const [values, setValues] = useState([{}]);
-    const [redirect, setRedirect] = useState(false);
 
     // Mounting as Page Loaded
     useEffect(() => {
@@ -23,17 +21,20 @@ const EditCreator = ({ creatorId }) => {
     }
 
     const onButtonSubmit = async () => {
-        const { error } = await supabase.from('creators').update(values[0]).eq('id', creatorId.id)
+        console.log(values);
+        const { error } = await supabase.from('creators').update(values[0]).eq('id', creatorId)
         if(error) {
             console.log(error)
+        } else {
+            onPageChange('show'); // Switch back to ShowCreators
         }
-        setRedirect(true)
+
     }
 
     const onButtonDelete = async () => {
-        const res = await supabase.from('creators').delete().eq('id', creatorId.id)
-        console.log(res);
-        setRedirect(true);
+        // eslint-disable-next-line no-unused-vars
+        const res = await supabase.from('creators').delete().eq('id', creatorId)
+        onPageChange('show'); // Switch back to ShowCreators
     }
 
     // Callback Method: Get Data from Child to Parent
@@ -43,12 +44,6 @@ const EditCreator = ({ creatorId }) => {
             updatedValues[0] = { ...updatedValues[0], [field]: value }; 
             return updatedValues;
         });
-    }
-
-    if(redirect) {
-        return (
-            <Navigate to={'/'} />
-        )
     }
 
     return (

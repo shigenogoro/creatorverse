@@ -30,6 +30,13 @@ function App() {
         scrollToMain();
     }
 
+    const handlePageChange = (newPage) => {
+      setPage(newPage);
+      if (newPage === 'show') {
+          getCreators(); // Refresh the list of creators when returning to the ShowCreators page
+      }
+  }
+
   // Scroll to Main-Div
   const scrollToMain = () => {
       const mainDiv = document.querySelector('#main-page');
@@ -59,14 +66,19 @@ function App() {
           </header>
 
           <main id='main-page'>
-              {page === 'show' && (
-                      <ShowCreators 
-                          creators={creators} 
-                          onEdit={(id) => handlePageSwitch('edit', id)} 
-                      />
+              {(page === 'show' || page == '' || page === undefined) && (
+                  <ShowCreators 
+                      creators={creators} 
+                      onEdit={(id) => handlePageSwitch('edit', id)} 
+                  />
               )}
-              {page === 'add' && <AddCreator />}
-              {page === 'edit' && selectedCreatorId && <EditCreator creatorId={selectedCreatorId} />}
+              {page === 'add' && 
+                  <AddCreator onPageChange={handlePageChange} />
+              }
+              {page === 'edit' && 
+                  selectedCreatorId && 
+                  <EditCreator creatorId={selectedCreatorId} onPageChange={handlePageChange} />
+              }
           </main>
         </div>
     )
