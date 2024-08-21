@@ -36,9 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<!-- <img src='https://github.com/shigenogoro/creatorverse/demo/creatorverse_demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
-
-![](https://github.com/shigenogoro/creatorverse/demo/creatorverse_demo.gif)
+<img src='https://github.com/shigenogoro/creatorverse/demo/creatorverse_add.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
