@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import useParams from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MyButton from "../../components/MyButton/MyButton";
 import './EditCreator.css'
 import { supabase } from "../../client";
 
 const EditCreator = () => {
     // get user
-    const { creatorId } = useParams();
+    const creatorId = useParams();
 
     // State Management
     const [values, setValues] = useState([{}]);
@@ -18,14 +18,17 @@ const EditCreator = () => {
 
     // Functions
     const getCreator = async () => {
-        const { data } = await supabase.from("creators").select.eq('id', creatorId);
+        const { data } = await supabase.from("creators").select().eq('id', creatorId.id);
         setValues(data);
     }
 
     const onValuesChange = (field) => (event) => {
-        setValues({...values, [field]: event.target.value});
+        setValues(prevValues => {
+            const updatedValues = [...prevValues]; // Copy the previous array
+            updatedValues[0] = { ...updatedValues[0], [field]: event.target.value }; // Update the first element
+            return updatedValues;
+        });
     }
-
 
     return (
         <div className="edit-container">
@@ -34,32 +37,37 @@ const EditCreator = () => {
                 <form>
                     <div>
                         <label htmlFor="name">Name</label>
+                        <br />
                         <input 
                             onChange={onValuesChange('name')}
                             type="text" 
                             name="name"  
                             id="name" 
-                            value={values.name}
+                            value={values[0].name}
                         />
                     </div>
 
                     <div>
                         <label htmlFor="imgURL">Image</label>
+                        <br />
                         <input 
                             onChange={onValuesChange('imgURL')}
                             type="text" 
                             name="imgURL"  
                             id="imgURL" 
+                            value={values[0].imgURL}
                         />
                     </div>
 
                     <div>
                         <label htmlFor="description">Description</label>
+                        <br />
                         <input 
                             onChange={onValuesChange('description')}
-                            type="text" 
+                            type="textarea" 
                             name="description"  
                             id="description" 
+                            value={values[0].description}
                         />
                     </div>
                 </form>
@@ -72,11 +80,13 @@ const EditCreator = () => {
                         <label htmlFor="ytURL">
                             <span><i className="fa fa-youtube-play"></i> YouTube</span>
                         </label>
+                        <br />
                         <input 
                             onChange={onValuesChange('ytURL')}
                             type="text" 
                             name="ytURL"  
                             id="ytURL" 
+                            value={values[0].ytURL}
                         />
                     </div>
 
@@ -84,11 +94,13 @@ const EditCreator = () => {
                         <label htmlFor="twitterURL">
                             <span><i className="fa fa-twitter"></i>Twitter</span>
                         </label>
+                        <br />
                         <input 
                             onChange={onValuesChange('twitterURL')}
                             type="text" 
                             name="twitterURL"  
                             id="twitterURL" 
+                            value={values[0].twitterURL}
                         />
                     </div>
 
@@ -96,11 +108,13 @@ const EditCreator = () => {
                         <label htmlFor="igURL">
                             <span><i className="fa fa-instagram"></i>Instagram</span>
                         </label>
+                        <br />
                         <input 
                             onChange={onValuesChange('igURL')}
                             type="text" 
                             name="igURL"  
                             id="igURL" 
+                            value={values[0].igURL}
                         />
                     </div>
                 </form>
