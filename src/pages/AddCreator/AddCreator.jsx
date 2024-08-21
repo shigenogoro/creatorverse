@@ -36,6 +36,7 @@ const AddCreator = () => {
 
     return (
         <div className="add-container">
+            <h2 className="main-title">Add Creator</h2>
             <InfoForm values={values[0]} onValuesChange={handleValuesChange} />
 
             <div>
