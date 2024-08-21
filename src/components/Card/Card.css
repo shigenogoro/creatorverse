@@ -64,7 +64,7 @@ h3 {
 }
 
 /* Style all font awesome icons */
-.fa {
+.card-fa {
     font-size: 30px;
     width: 50px;
     text-align: center;
@@ -73,6 +73,6 @@ h3 {
 }
   
 /* Add a hover effect if you want */
-.fa:hover {
+.card-fa:hover {
     opacity: 0.7;   
 }

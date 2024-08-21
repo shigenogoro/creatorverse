@@ -12,7 +12,7 @@ const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {
                         <div className="card-social-btn-group">
                             {
                                 ytURL ? (
-                                    <a href={ytURL} className="fa fa-youtube-play"></a>
+                                    <a href={ytURL} className="fa fa-youtube-play card-fa"></a>
                                 ) : (
                                     <div></div>
                                 )
@@ -20,7 +20,7 @@ const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {
 
                             {
                                 twitterURL ? (
-                                    <a href={twitterURL} className="fa fa-twitter"></a>
+                                    <a href={twitterURL} className="fa fa-twitter card-fa"></a>
                                 ) : (
                                     <div></div>
                                 )
@@ -28,7 +28,7 @@ const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {
 
                             {
                                 igURL ? (
-                                    <a href={igURL} className="fa fa-instagram"></a>
+                                    <a href={igURL} className="fa fa-instagram card-fa"></a>
                                 ) : (
                                     <div></div>
                                 )
@@ -36,8 +36,8 @@ const Card = ({name, ytURL, twitterURL, igURL, intro, imgURL}) => {
 
                         </div>
                         <div className="card-info-btn-group">
-                            <a href="#" className="fa fa-info-circle"></a>
-                            <a href="#" className="fa fa-edit"></a>
+                            <a href="#" className="fa fa-info-circle card-fa"></a>
+                            <a href="#" className="fa fa-edit card-fa"></a>
                         </div>
                     </div>
 

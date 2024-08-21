@@ -25,17 +25,17 @@ const ViewCreator = () => {
 
     return (
         <div className="view-container">
-            <div className="info-group">
+            <div className="view-info-group">
                 <img src={creator[0].imgURL} alt={creator[0].name} />
 
-                <div className="text-info">
-                    <h2 className="creator-name">{creator[0].name}</h2>
-                    <p className="description-box">{creator[0].description}</p>
-                    <ul>
+                <div className="view-text-info">
+                    <h2 className="view-creator-name">{creator[0].name}</h2>
+                    <p className="view-description-box">{creator[0].description}</p>
+                    <ul className="view-ul">
                         {
                             creator[0].ytURL ? (
-                                <li>
-                                    <a href={creator[0].ytURL} className="fa fa-youtube-play">
+                                <li className="view-li">
+                                    <a href={creator[0].ytURL} className="fa fa-youtube-play view-fa">
                                         <span> {creator[0].name}</span>
                                     </a>
                                 </li>
@@ -46,8 +46,8 @@ const ViewCreator = () => {
                         
                         {
                             creator[0].twitterURL ? (
-                                <li>
-                                    <a href={creator[0].twitterURL} className="fa fa-twitter">
+                                <li className="view-li">
+                                    <a href={creator[0].twitterURL} className="fa fa-twitter view-fa">
                                         <span> {creator[0].name}</span>
                                     </a>
                                 </li>
@@ -58,9 +58,9 @@ const ViewCreator = () => {
 
                         {
                             creator[0].igURL ? (
-                                <li>
-                                    <a href={creator[0].igURL} className="fa fa-instagram">
-                                        <span> {creator[0].name}</span>
+                                <li className="view-li">
+                                    <a href={creator[0].igURL} className="fa fa-instagram view-fa">
+                                        <span>   {creator[0].name}</span>
                                     </a>
                                 </li>
                             ) : (
@@ -71,7 +71,7 @@ const ViewCreator = () => {
                 </div>
             </div>
 
-            <div className="btn-group">
+            <div className="view-btn-group">
                 <MyButton title="Edit" type="normal" />
                 <MyButton title="Delete" type="danger" />
             </div>
