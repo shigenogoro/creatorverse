@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MyButton from "./../../components/MyButton/MyButton"
 import { supabase } from "../../client";
@@ -11,6 +11,8 @@ const ViewCreator = () => {
 
     // State Management
     const [creator, setCreator] = useState([{}]);
+    const [redirectEdit, setRedirectEdit] = useState(false);
+    const [redirectHome, setRedirectHome] = useState(false);
 
     // Mounting as Page Loaded
     useEffect(() => {
@@ -21,6 +23,28 @@ const ViewCreator = () => {
     const getCreator = async () => {
         const { data } = await supabase.from("creators").select().eq('id', creatorId.id);
         setCreator(data);
+    }
+
+    const onButtonEdit = () => {
+        setRedirectEdit(true);
+    }
+
+    const onButtonDelete = async () => {
+        const res = await supabase.from('creators').delete().eq('id', creatorId.id)
+        console.log(res);
+        setRedirectHome(true);
+    }
+
+    if(redirectEdit) {
+        return (
+            <Navigate to={`/edit/${creatorId.id}`} />
+        )
+    }
+
+    if(redirectHome) {
+        return (
+            <Navigate to={'/'} />
+        )
     }
 
     return (
@@ -72,8 +96,8 @@ const ViewCreator = () => {
             </div>
 
             <div className="view-btn-group">
-                <MyButton title="Edit" type="normal" />
-                <MyButton title="Delete" type="danger" />
+                <MyButton title="Edit" type="normal" onClick={onButtonEdit} />
+                <MyButton title="Delete" type="danger" onClick={onButtonDelete} />
             </div>
         </div>
     )
