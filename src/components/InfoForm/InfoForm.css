@@ -7,38 +7,43 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 .info-container, .social-container {
     width: 100%;
     max-width: 100%;
-    padding: 20px;
-    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
 }
 
 .form-field {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+input, textarea {
+    width: 100%; 
     border-radius: 4px;
-    box-sizing: border-box;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+    margin-bottom: 2rem;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    font-size: 1.75rem; /* Font size for label */
+    margin-top: 0.5rem;
+    margin-bottom: 0.1rem; /* Space between label and input */
 }
 
-textarea {
-    height: 100px;
-    resize: vertical;
+legend {
+    font-size: 2.5rem; /* Font size for legend */
+    margin-bottom: 1rem;
+    color: #77a4ce;
+    font-family: "Sono", monospace;
 }

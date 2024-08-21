@@ -1,3 +1,5 @@
+import './InfoForm.css'
+
 const InfoForm = ({values, onValuesChange}) => {    
     // Callback for lifting change to the parent component.
     const handleChange = (field) => (event) => {
@@ -39,7 +41,7 @@ const InfoForm = ({values, onValuesChange}) => {
                     <div className="form-field">
                         <label htmlFor="description">Description</label>
                         <br />
-                        <input 
+                        <textarea 
                             onChange={handleChange('description')}
                             type="textarea" 
                             name="description"  
@@ -68,7 +70,7 @@ const InfoForm = ({values, onValuesChange}) => {
 
                         <div className="form-field">
                             <label htmlFor="twitterURL">
-                                <span><i className="fa fa-twitter"></i>Twitter</span>
+                                <span><i className="fa fa-twitter"></i> Twitter</span>
                             </label>
                             <br />
                             <input 
@@ -82,7 +84,7 @@ const InfoForm = ({values, onValuesChange}) => {
 
                         <div className="form-field">
                             <label htmlFor="igURL">
-                                <span><i className="fa fa-instagram"></i>Instagram</span>
+                                <span><i className="fa fa-instagram"></i> Instagram</span>
                             </label>
                             <br />
                             <input 
