@@ -31,12 +31,26 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Added RWD submit button for each pages.
+- [x] Live Demo - Host the frontend website using GitHub: https://shigenogoro.github.io/creatorverse/
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-![creatorverse_demo](https://github.com/user-attachments/assets/54bcc8cc-74f4-4299-9db4-c3847908d32c)
+1. Add Creator: Add a creator: Darvish Yu
+   ![creatorverse_add](https://github.com/user-attachments/assets/ed09e254-c0bb-45ff-a662-f6524f50d2e9)
+
+2. Edit Creator: Edit the creator, Darvish Yu with his twitter account, and youtube account.
+   ![creatorverse_edit](https://github.com/user-attachments/assets/e3e7a164-f5b0-438e-805e-797ae5f1473a)
+
+3. View Creator: Take the user to their details page (with unique URL), which includes their name, url, and description.
+   ![creatorverse_view](https://github.com/user-attachments/assets/80b891e7-3490-4269-a69f-2810d746b205)
+
+4. Delete Creator: Delete the creator from Edit Page and View Page respectively, Darvish Yu, Ohtani Shohei.
+   ![creatorverse_delete](https://github.com/user-attachments/assets/1910a880-9ecd-4550-977a-a8d03a50013f)
+
+5. Add Creator: Add the creator Darvish Yu back to remain 5 creators on the page.
+   ![creatorverse_add_back](https://github.com/user-attachments/assets/0258e433-f496-464b-8c72-d5cf41b49fc0)
 
 <!-- Replace this with whatever GIF tool you used! -->
 
