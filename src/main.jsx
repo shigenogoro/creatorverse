@@ -9,8 +9,8 @@ import './index.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
-      <MainRouter />
       <App />
+      <MainRouter />
     </HashRouter>
   </StrictMode>,
 )
