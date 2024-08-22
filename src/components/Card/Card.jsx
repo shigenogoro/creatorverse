@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Card.css'
 
 const Card = ({id, name, ytURL, twitterURL, igURL, intro, imgURL, onEdit}) => {
@@ -36,7 +37,7 @@ const Card = ({id, name, ytURL, twitterURL, igURL, intro, imgURL, onEdit}) => {
 
                         </div>
                         <div className="card-info-btn-group">
-                            <a href={`/creatorverse/view/${id}`} className="fa fa-info-circle card-fa"></a>
+                            <Link href={`/view/${id}`} className="fa fa-info-circle card-fa"></Link>
                             <button onClick={() => onEdit(id)} className="fa fa-edit card-fa card-btn"></button>
                         </div>
                     </div>
