@@ -7,7 +7,7 @@ import { supabase } from "../../client";
 import './ViewCreator.css'
 
 const ViewCreator = () => {
-    const {creatorId} = useParams();
+    const creatorId = useParams();
 
     // State Management
     const [creator, setCreator] = useState([{}]);
@@ -21,7 +21,7 @@ const ViewCreator = () => {
 
     // Functions
     const getCreator = async () => {
-        const { data } = await supabase.from("creators").select().eq('id', creatorId);
+        const { data } = await supabase.from("creators").select().eq('id', creatorId.id);
         setCreator(data);
     }
 
@@ -30,14 +30,14 @@ const ViewCreator = () => {
     }
 
     const onButtonDelete = async () => {
-        const res = await supabase.from('creators').delete().eq('id', creatorId)
+        const res = await supabase.from('creators').delete().eq('id', creatorId.id)
         console.log(res);
         setRedirectHome(true);
     }
 
     if(redirectEdit) {
         return (
-            <Navigate to={'/'} state={{page: 'edit', creatorId: creatorId}} />
+            <Navigate to={'/'} state={{page: 'edit', creatorId: creatorId.id}} />
         )
     }
 
