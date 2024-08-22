@@ -37,7 +37,7 @@ const Card = ({id, name, ytURL, twitterURL, igURL, intro, imgURL, onEdit}) => {
 
                         </div>
                         <div className="card-info-btn-group">
-                            <Link href={`/view/${id}`} className="fa fa-info-circle card-fa"></Link>
+                            <Link to={`/view/${id}`} className="fa fa-info-circle card-fa"></Link>
                             <button onClick={() => onEdit(id)} className="fa fa-edit card-fa card-btn"></button>
                         </div>
                     </div>
