@@ -5,7 +5,7 @@ const MainRouter = () => {
     // Routing
     const routes = useRoutes([
         {
-            path: '/creatorverse/view/:id',
+            path: '/view/:id',
             element: <ViewCreator />
         }
     ]);
